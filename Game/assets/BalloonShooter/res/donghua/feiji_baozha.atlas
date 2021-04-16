@@ -1,0 +1,125 @@
+
+feiji_baozha.png
+size: 2048,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+卡通警用直升飞机/色相_饱和度_1
+  rotate: false
+  xy: 495, 847
+  size: 292, 202
+  orig: 292, 202
+  offset: 0, 0
+  index: -1
+卡通警用直升飞机/尾巴
+  rotate: false
+  xy: 359, 1627
+  size: 84, 84
+  orig: 84, 84
+  offset: 0, 0
+  index: -1
+卡通警用直升飞机/盖子2
+  rotate: false
+  xy: 545, 1051
+  size: 31, 28
+  orig: 31, 28
+  offset: 0, 0
+  index: -1
+卡通警用直升飞机/螺旋桨
+  rotate: false
+  xy: 909, 751
+  size: 363, 41
+  orig: 363, 41
+  offset: 0, 0
+  index: -1
+卡通警用直升飞机/盖子
+  rotate: false
+  xy: 495, 1051
+  size: 48, 31
+  orig: 48, 31
+  offset: 0, 0
+  index: -1
+fanpai
+  rotate: false
+  xy: 789, 847
+  size: 246, 229
+  orig: 246, 229
+  offset: 0, 0
+  index: -1
+guaiwubaozha11
+  rotate: false
+  xy: 909, 415
+  size: 154, 166
+  orig: 572, 540
+  offset: 301, 156
+  index: -1
+guaiwubaozha10
+  rotate: false
+  xy: 909, 583
+  size: 154, 166
+  orig: 572, 540
+  offset: 301, 156
+  index: -1
+guaiwubaozha12
+  rotate: false
+  xy: 1, 1627
+  size: 356, 412
+  orig: 572, 540
+  offset: 187, 73
+  index: -1
+guaiwubaozha20
+  rotate: false
+  xy: 1, 1085
+  size: 482, 540
+  orig: 572, 540
+  offset: 90, 0
+  index: -1
+guaiwubaozha13
+  rotate: false
+  xy: 909, 1
+  size: 356, 412
+  orig: 572, 540
+  offset: 187, 73
+  index: -1
+guaiwubaozha15
+  rotate: false
+  xy: 495, 424
+  size: 412, 421
+  orig: 572, 540
+  offset: 142, 60
+  index: -1
+guaiwubaozha19
+  rotate: false
+  xy: 1, 1
+  size: 492, 540
+  orig: 572, 540
+  offset: 80, 0
+  index: -1
+guaiwubaozha14
+  rotate: false
+  xy: 495, 1
+  size: 412, 421
+  orig: 572, 540
+  offset: 142, 60
+  index: -1
+guaiwubaozha16
+  rotate: false
+  xy: 485, 1561
+  size: 460, 474
+  orig: 572, 540
+  offset: 112, 38
+  index: -1
+guaiwubaozha18
+  rotate: false
+  xy: 1, 543
+  size: 492, 540
+  orig: 572, 540
+  offset: 80, 0
+  index: -1
+guaiwubaozha17
+  rotate: false
+  xy: 485, 1085
+  size: 460, 474
+  orig: 572, 540
+  offset: 112, 38
+  index: -1

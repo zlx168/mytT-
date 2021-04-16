@@ -1,0 +1,20 @@
+
+jiangluoshan.png
+size: 256,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+将落1/色相_饱和度_1
+  rotate: false
+  xy: 1, 1
+  size: 227, 325
+  orig: 227, 325
+  offset: 0, 0
+  index: -1
+将落1/pz
+  rotate: false
+  xy: 1, 328
+  size: 204, 165
+  orig: 204, 165
+  offset: 0, 0
+  index: -1

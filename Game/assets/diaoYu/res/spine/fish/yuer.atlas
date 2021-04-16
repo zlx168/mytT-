@@ -1,0 +1,76 @@
+
+yuer.png
+size: 1024,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+卡通鱼儿/yu1
+  rotate: false
+  xy: 251, 1
+  size: 197, 286
+  orig: 197, 286
+  offset: 0, 0
+  index: -1
+卡通鱼儿/yu2
+  rotate: false
+  xy: 1, 244
+  size: 242, 245
+  orig: 242, 245
+  offset: 0, 0
+  index: -1
+卡通鱼儿/yu4
+  rotate: false
+  xy: 688, 244
+  size: 249, 180
+  orig: 249, 180
+  offset: 0, 0
+  index: -1
+卡通鱼儿/yu3
+  rotate: false
+  xy: 450, 244
+  size: 236, 220
+  orig: 236, 220
+  offset: 0, 0
+  index: -1
+卡通鱼儿/wei3
+  rotate: false
+  xy: 939, 286
+  size: 53, 94
+  orig: 53, 94
+  offset: 0, 0
+  index: -1
+卡通鱼儿/wei1
+  rotate: false
+  xy: 939, 1
+  size: 62, 93
+  orig: 62, 93
+  offset: 0, 0
+  index: -1
+卡通鱼儿/wei2
+  rotate: false
+  xy: 939, 191
+  size: 54, 93
+  orig: 54, 93
+  offset: 0, 0
+  index: -1
+卡通鱼儿/wei4
+  rotate: false
+  xy: 939, 96
+  size: 60, 93
+  orig: 60, 93
+  offset: 0, 0
+  index: -1
+卡通鱼儿/矩形_1
+  rotate: false
+  xy: 245, 289
+  size: 200, 141
+  orig: 202, 143
+  offset: 1, 1
+  index: -1
+惊
+  rotate: false
+  xy: 1, 1
+  size: 248, 241
+  orig: 248, 241
+  offset: 0, 0
+  index: -1

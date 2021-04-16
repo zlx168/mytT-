@@ -1,0 +1,48 @@
+
+feiji.png
+size: 512,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+卡通警用直升飞机/色相_饱和度_1
+  rotate: false
+  xy: 1, 1
+  size: 292, 202
+  orig: 292, 202
+  offset: 0, 0
+  index: -1
+卡通警用直升飞机/尾巴
+  rotate: false
+  xy: 366, 205
+  size: 84, 84
+  orig: 84, 84
+  offset: 0, 0
+  index: -1
+卡通警用直升飞机/盖子2
+  rotate: false
+  xy: 51, 479
+  size: 31, 28
+  orig: 31, 28
+  offset: 0, 0
+  index: -1
+卡通警用直升飞机/螺旋桨
+  rotate: false
+  xy: 1, 436
+  size: 363, 41
+  orig: 363, 41
+  offset: 0, 0
+  index: -1
+卡通警用直升飞机/盖子
+  rotate: false
+  xy: 1, 479
+  size: 48, 31
+  orig: 48, 31
+  offset: 0, 0
+  index: -1
+fanpai
+  rotate: false
+  xy: 1, 205
+  size: 246, 229
+  orig: 246, 229
+  offset: 0, 0
+  index: -1

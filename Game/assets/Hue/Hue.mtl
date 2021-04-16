@@ -1,0 +1,33 @@
+{
+  "__type__": "cc.Material",
+  "_name": "Hue",
+  "_objFlags": 0,
+  "_native": "",
+  "_effectAsset": {
+    "__uuid__": "87b1e257-41fa-46ee-8c3e-8e5dafa26058"
+  },
+  "_techniqueIndex": 0,
+  "_techniqueData": {
+    "0": {
+      "defines": {
+        "USE_TEXTURE": true,
+        "INPUT_IS_GAMMA": true,
+        "USE_ALPHA_TEST": true,
+        "USE_TINT": false
+      },
+      "props": {
+        "u_dH": 210,
+        "u_dS": 4.5879966492634594e-14,
+        "u_dL": 0,
+        "hue": 15,
+        "inputColor": {
+          "__type__": "cc.Color",
+          "r": 200,
+          "g": 53,
+          "b": 53,
+          "a": 255
+        }
+      }
+    }
+  }
+}

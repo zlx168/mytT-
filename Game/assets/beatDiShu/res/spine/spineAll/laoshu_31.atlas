@@ -1,0 +1,356 @@
+
+laoshu_31.png
+size: 4096,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+地鼠
+  rotate: false
+  xy: 2114, 1209
+  size: 71, 130
+  orig: 71, 130
+  offset: 0, 0
+  index: -1
+牌子
+  rotate: false
+  xy: 2215, 1511
+  size: 156, 143
+  orig: 156, 143
+  offset: 0, 0
+  index: -1
+眩晕_00005
+  rotate: false
+  xy: 805, 403
+  size: 400, 400
+  orig: 400, 400
+  offset: 0, 0
+  index: -1
+眩晕_00006
+  rotate: false
+  xy: 805, 805
+  size: 400, 400
+  orig: 400, 400
+  offset: 0, 0
+  index: -1
+眩晕_00002
+  rotate: false
+  xy: 1, 805
+  size: 400, 400
+  orig: 400, 400
+  offset: 0, 0
+  index: -1
+眩晕_00013
+  rotate: false
+  xy: 1, 1207
+  size: 400, 400
+  orig: 400, 400
+  offset: 0, 0
+  index: -1
+眩晕_00019
+  rotate: false
+  xy: 1, 1609
+  size: 400, 400
+  orig: 400, 400
+  offset: 0, 0
+  index: -1
+眩晕_00003
+  rotate: false
+  xy: 1, 403
+  size: 400, 400
+  orig: 400, 400
+  offset: 0, 0
+  index: -1
+眩晕_00011
+  rotate: false
+  xy: 805, 1609
+  size: 400, 400
+  orig: 400, 400
+  offset: 0, 0
+  index: -1
+眩晕_00008
+  rotate: false
+  xy: 1207, 1609
+  size: 400, 400
+  orig: 400, 400
+  offset: 0, 0
+  index: -1
+眩晕_00017
+  rotate: false
+  xy: 1207, 805
+  size: 400, 400
+  orig: 400, 400
+  offset: 0, 0
+  index: -1
+眩晕_00007
+  rotate: false
+  xy: 1207, 1207
+  size: 400, 400
+  orig: 400, 400
+  offset: 0, 0
+  index: -1
+眩晕_00015
+  rotate: false
+  xy: 403, 1207
+  size: 400, 400
+  orig: 400, 400
+  offset: 0, 0
+  index: -1
+眩晕_00020
+  rotate: false
+  xy: 1207, 1
+  size: 400, 400
+  orig: 400, 400
+  offset: 0, 0
+  index: -1
+眩晕_00021
+  rotate: false
+  xy: 805, 1207
+  size: 400, 400
+  orig: 400, 400
+  offset: 0, 0
+  index: -1
+眩晕_00012
+  rotate: false
+  xy: 403, 805
+  size: 400, 400
+  orig: 400, 400
+  offset: 0, 0
+  index: -1
+眩晕_00014
+  rotate: false
+  xy: 1207, 403
+  size: 400, 400
+  orig: 400, 400
+  offset: 0, 0
+  index: -1
+眩晕_00004
+  rotate: false
+  xy: 403, 1609
+  size: 400, 400
+  orig: 400, 400
+  offset: 0, 0
+  index: -1
+眩晕_00001
+  rotate: false
+  xy: 805, 1
+  size: 400, 400
+  orig: 400, 400
+  offset: 0, 0
+  index: -1
+眩晕_00010
+  rotate: false
+  xy: 403, 403
+  size: 400, 400
+  orig: 400, 400
+  offset: 0, 0
+  index: -1
+眩晕_00009
+  rotate: false
+  xy: 1609, 1
+  size: 400, 400
+  orig: 400, 400
+  offset: 0, 0
+  index: -1
+眩晕_00018
+  rotate: false
+  xy: 403, 1
+  size: 400, 400
+  orig: 400, 400
+  offset: 0, 0
+  index: -1
+眩晕_00016
+  rotate: false
+  xy: 1, 1
+  size: 400, 400
+  orig: 400, 400
+  offset: 0, 0
+  index: -1
+ds_00000
+  rotate: false
+  xy: 1912, 403
+  size: 200, 300
+  orig: 200, 300
+  offset: 0, 0
+  index: -1
+ds_00017
+  rotate: false
+  xy: 2114, 303
+  size: 200, 300
+  orig: 200, 300
+  offset: 0, 0
+  index: -1
+ds_00009
+  rotate: false
+  xy: 2518, 303
+  size: 200, 300
+  orig: 200, 300
+  offset: 0, 0
+  index: -1
+ds_00002
+  rotate: false
+  xy: 1609, 1715
+  size: 200, 300
+  orig: 200, 300
+  offset: 0, 0
+  index: -1
+ds_00012
+  rotate: false
+  xy: 1912, 1007
+  size: 200, 300
+  orig: 200, 300
+  offset: 0, 0
+  index: -1
+ds_00008
+  rotate: false
+  xy: 1609, 1413
+  size: 200, 300
+  orig: 200, 300
+  offset: 0, 0
+  index: -1
+ds_00003
+  rotate: false
+  xy: 2316, 907
+  size: 200, 300
+  orig: 200, 300
+  offset: 0, 0
+  index: -1
+ds_00016
+  rotate: false
+  xy: 2114, 907
+  size: 200, 300
+  orig: 200, 300
+  offset: 0, 0
+  index: -1
+ds_00005
+  rotate: false
+  xy: 2215, 1209
+  size: 200, 300
+  orig: 200, 300
+  offset: 0, 0
+  index: -1
+ds_00021
+  rotate: false
+  xy: 1811, 1715
+  size: 200, 300
+  orig: 200, 300
+  offset: 0, 0
+  index: -1
+ds_00020
+  rotate: false
+  xy: 2011, 1
+  size: 200, 300
+  orig: 200, 300
+  offset: 0, 0
+  index: -1
+ds_00004
+  rotate: false
+  xy: 1912, 705
+  size: 200, 300
+  orig: 200, 300
+  offset: 0, 0
+  index: -1
+ds_00019
+  rotate: false
+  xy: 2518, 907
+  size: 200, 300
+  orig: 200, 300
+  offset: 0, 0
+  index: -1
+ds_00015
+  rotate: false
+  xy: 2114, 605
+  size: 200, 300
+  orig: 200, 300
+  offset: 0, 0
+  index: -1
+ds_00007
+  rotate: false
+  xy: 2316, 303
+  size: 200, 300
+  orig: 200, 300
+  offset: 0, 0
+  index: -1
+ds_00011
+  rotate: false
+  xy: 2215, 1715
+  size: 200, 300
+  orig: 200, 300
+  offset: 0, 0
+  index: -1
+ds_00018
+  rotate: false
+  xy: 2013, 1715
+  size: 200, 300
+  orig: 200, 300
+  offset: 0, 0
+  index: -1
+ds_00001
+  rotate: false
+  xy: 2316, 605
+  size: 200, 300
+  orig: 200, 300
+  offset: 0, 0
+  index: -1
+ds_00010
+  rotate: false
+  xy: 2013, 1413
+  size: 200, 300
+  orig: 200, 300
+  offset: 0, 0
+  index: -1
+ds_00014
+  rotate: false
+  xy: 1811, 1413
+  size: 200, 300
+  orig: 200, 300
+  offset: 0, 0
+  index: -1
+ds_00006
+  rotate: false
+  xy: 2213, 1
+  size: 200, 300
+  orig: 200, 300
+  offset: 0, 0
+  index: -1
+ds_00013
+  rotate: false
+  xy: 2415, 1
+  size: 200, 300
+  orig: 200, 300
+  offset: 0, 0
+  index: -1
+psy_004
+  rotate: false
+  xy: 1609, 1009
+  size: 301, 200
+  orig: 301, 200
+  offset: 0, 0
+  index: -1
+psy_001
+  rotate: false
+  xy: 1609, 403
+  size: 301, 200
+  orig: 301, 200
+  offset: 0, 0
+  index: -1
+psy_003
+  rotate: false
+  xy: 1609, 807
+  size: 301, 200
+  orig: 301, 200
+  offset: 0, 0
+  index: -1
+psy_005
+  rotate: false
+  xy: 1609, 1211
+  size: 301, 200
+  orig: 301, 200
+  offset: 0, 0
+  index: -1
+psy_002
+  rotate: false
+  xy: 1609, 605
+  size: 301, 200
+  orig: 301, 200
+  offset: 0, 0
+  index: -1

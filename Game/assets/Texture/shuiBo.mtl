@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.Material",
+  "_name": "shuiBo",
+  "_objFlags": 0,
+  "_native": "",
+  "_effectAsset": {
+    "__uuid__": "4eddd4fa-5605-4ed1-aac3-f8bb87f922a2"
+  },
+  "_techniqueIndex": 0,
+  "_techniqueData": {
+    "0": {
+      "props": {
+        "texture": {
+          "__uuid__": "21b95f47-2c56-45ff-b480-a4063f84e19f"
+        }
+      },
+      "defines": {
+        "USE_TEXTURE": true
+      }
+    }
+  }
+}

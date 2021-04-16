@@ -1,0 +1,97 @@
+
+jida.png
+size: 1024,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+hammer
+  rotate: false
+  xy: 747, 891
+  size: 90, 76
+  orig: 98, 77
+  offset: 0, 1
+  index: -1
+击打_00010
+  rotate: false
+  xy: 692, 1009
+  size: 308, 243
+  orig: 800, 600
+  offset: 230, 208
+  index: -1
+击打_00000
+  rotate: false
+  xy: 839, 891
+  size: 92, 72
+  orig: 800, 600
+  offset: 364, 278
+  index: -1
+击打_00002
+  rotate: false
+  xy: 375, 716
+  size: 370, 291
+  orig: 800, 600
+  offset: 231, 156
+  index: -1
+击打_00004
+  rotate: false
+  xy: 1, 1
+  size: 520, 417
+  orig: 800, 600
+  offset: 160, 71
+  index: -1
+击打_00006
+  rotate: false
+  xy: 523, 369
+  size: 365, 345
+  orig: 800, 600
+  offset: 227, 114
+  index: -1
+击打_00007
+  rotate: false
+  xy: 1, 750
+  size: 345, 298
+  orig: 800, 600
+  offset: 223, 152
+  index: -1
+击打_00008
+  rotate: false
+  xy: 348, 1009
+  size: 342, 298
+  orig: 800, 600
+  offset: 224, 152
+  index: -1
+击打_00001
+  rotate: false
+  xy: 692, 1254
+  size: 177, 156
+  orig: 800, 600
+  offset: 321, 236
+  index: -1
+击打_00005
+  rotate: false
+  xy: 1, 420
+  size: 372, 328
+  orig: 800, 600
+  offset: 215, 121
+  index: -1
+击打_00003
+  rotate: false
+  xy: 523, 1
+  size: 469, 366
+  orig: 800, 600
+  offset: 184, 106
+  index: -1
+击打_00009
+  rotate: false
+  xy: 1, 1050
+  size: 338, 290
+  orig: 800, 600
+  offset: 227, 160
+  index: -1
+击打_00011
+  rotate: false
+  xy: 747, 716
+  size: 235, 173
+  orig: 800, 600
+  offset: 292, 276
+  index: -1
