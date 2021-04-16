@@ -180,7 +180,7 @@
       "array": [
         0,
         0,
-        480.901200392112,
+        488.4383277344234,
         0,
         0,
         0,
@@ -2283,13 +2283,31 @@
     "_id": "0eI+RwNAdDBrqYOQSmm4GZ"
   },
   {
-    "__type__": "929e7vmSQdC5I1RZz4IaWW+",
+    "__type__": "fdaa2UOKR1L352CsbauiKA7",
     "_name": "",
     "_objFlags": 0,
     "node": {
       "__id__": 47
     },
     "_enabled": true,
-    "_id": "775PMGfTBBK49t6CF2GvhL"
+    "starShowMusic": {
+      "__uuid__": "74119a85-4e32-4d02-8923-13e395dcacbf"
+    },
+    "gameOverMusic": {
+      "__uuid__": "af04b21e-a267-4a29-a710-e19316e360ad"
+    },
+    "zhiShengJi": {
+      "__uuid__": "c36d3c67-9398-4255-94dc-a84c01fe7f30"
+    },
+    "yanHuaBao": {
+      "__uuid__": "e6651551-4621-4acf-94da-2ba6a229f869"
+    },
+    "shot": {
+      "__uuid__": "652d8312-bc4e-4625-981b-57452723ed5a"
+    },
+    "feiJiEat": {
+      "__uuid__": "016de103-610d-42d9-b6a3-e23b46ba3a8e"
+    },
+    "_id": "73a6tA3tJLc6/9kOhwjy89"
   }
 ]
