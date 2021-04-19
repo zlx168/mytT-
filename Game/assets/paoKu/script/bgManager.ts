@@ -10,19 +10,25 @@ const {ccclass, property} = cc._decorator;
 @ccclass
 export default class NewClass extends cc.Component {
 
-    @property(cc.Label)
-    label: cc.Label = null;
-
-    @property
-    text: string = 'hello';
-
-    // LIFE-CYCLE CALLBACKS:
-
+    @property(cc.Node)
+    bgList:cc.Node[] = []
     // onLoad () {}
+    private speed = 1
 
     start () {
 
     }
 
-    // update (dt) {}
+    update (dt) {
+        let bg = this.bgList[0]
+        let bg1 = this.bgList[1]
+        bg.x -= this.speed
+        bg1.x -= this.speed
+        if(bg.x <= -cc.winSize.width){
+            bg.x = cc.winSize.width
+        }
+        if(bg1.x <= cc.winSize.width){
+            bg1.x = cc.winSize.width
+        }
+    }
 }
