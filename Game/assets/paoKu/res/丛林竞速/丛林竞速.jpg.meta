@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.5",
+  "uuid": "f8edbe1e-eb02-4801-b245-01787e87a933",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 1920,
+  "height": 1080,
+  "platformSettings": {},
+  "subMetas": {
+    "丛林竞速": {
+      "ver": "1.0.4",
+      "uuid": "1cb55b7c-1074-4599-a7db-35c6445d4660",
+      "rawTextureUuid": "f8edbe1e-eb02-4801-b245-01787e87a933",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 1920,
+      "height": 1080,
+      "rawWidth": 1920,
+      "rawHeight": 1080,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}
