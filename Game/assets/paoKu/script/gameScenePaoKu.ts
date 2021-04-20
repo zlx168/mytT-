@@ -5,24 +5,29 @@
 // Learn life-cycle callbacks:
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
-import player from "./player";
+import bgManager from "./bgManager";
+import hero from "./hero";
+import obStacleManager from "./obstacleManager";
 
-const {ccclass, property} = cc._decorator;
+const { ccclass, property } = cc._decorator;
 
 @ccclass
-export default class NewClass extends cc.Component {
-
+export default class gameScenePaoKu extends cc.Component {
 
     @property(cc.Node)
-        player = null
-    start () {
-        this.node.on(cc.Node.EventType.TOUCH_END,this.touchEnd,this)
+    hero = null
+    @property(bgManager)
+    bgManager: bgManager = null
+    @property(obStacleManager)
+    obstacleManager:obStacleManager = null
+    start() {
+        this.bgManager.createBg(5)
+        this.obstacleManager.createObstacle(50)
     }
 
-    touchEnd(){
-        const script:player = this.player.getComponent("player")
-        script.jump(200,500)
-        
+    jump() {
+        const script: hero = this.hero.getComponent("hero")
+        script.jump(200, 500)
 
     }
 

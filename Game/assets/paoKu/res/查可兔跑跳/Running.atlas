@@ -1,0 +1,83 @@
+
+Running.png
+size: 512,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+weiba
+  rotate: false
+  xy: 296, 187
+  size: 30, 35
+  orig: 30, 35
+  offset: 0, 0
+  index: -1
+椭圆 1
+  rotate: false
+  xy: 76, 206
+  size: 138, 20
+  orig: 138, 20
+  offset: 0, 0
+  index: -1
+zuoshou
+  rotate: false
+  xy: 458, 193
+  size: 41, 86
+  orig: 41, 86
+  offset: 0, 0
+  index: -1
+zuojiao
+  rotate: false
+  xy: 1, 174
+  size: 73, 72
+  orig: 73, 72
+  offset: 0, 0
+  index: -1
+shenti
+  rotate: false
+  xy: 359, 106
+  size: 97, 128
+  orig: 97, 128
+  offset: 0, 0
+  index: -1
+youer
+  rotate: false
+  xy: 359, 1
+  size: 136, 103
+  orig: 136, 103
+  offset: 0, 0
+  index: -1
+tou
+  rotate: false
+  xy: 1, 1
+  size: 182, 171
+  orig: 182, 171
+  offset: 0, 0
+  index: -1
+zuoer
+  rotate: false
+  xy: 185, 1
+  size: 172, 126
+  orig: 172, 126
+  offset: 0, 0
+  index: -1
+yanjing1
+  rotate: false
+  xy: 458, 106
+  size: 44, 85
+  orig: 53, 93
+  offset: 6, 0
+  index: -1
+yanjing2
+  rotate: false
+  xy: 296, 129
+  size: 51, 56
+  orig: 53, 93
+  offset: 2, 32
+  index: -1
+zuiba
+  rotate: false
+  xy: 185, 129
+  size: 109, 75
+  orig: 109, 75
+  offset: 0, 0
+  index: -1

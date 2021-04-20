@@ -1,0 +1,17 @@
+{
+  "__type__": "cc.Material",
+  "_name": "uvAnimation",
+  "_objFlags": 0,
+  "_native": "",
+  "_effectAsset": {
+    "__uuid__": "9a665f37-943c-4f4e-9571-326365784b09"
+  },
+  "_techniqueIndex": 0,
+  "_techniqueData": {
+    "0": {
+      "defines": {
+        "USE_TEXTURE": true
+      }
+    }
+  }
+}

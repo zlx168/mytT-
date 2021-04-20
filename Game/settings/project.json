@@ -9,7 +9,8 @@
     "crow",
     "gift",
     "player",
-    "UI"
+    "UI",
+    "Bg"
   ],
   "collision-matrix": [
     [
@@ -48,6 +49,16 @@
       false
     ],
     [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    [
+      false,
       false,
       false,
       false,
