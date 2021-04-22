@@ -12,7 +12,15 @@ enum PlayerState{
     JUMP
 }
 
+enum Event{
+    CREATE_OBSTACLE = "create_obstacle",
+    GAME_OVER = "game_over",
+    PAUSE_ANIMATION = "pause_animation",
+    RESERME_AIMATION = "reserme_animtion",
+    ADD_SCORE = "add_score",
+}
 export default class constant  {
     // public static playerState:PlayerState = PlayerState
     public static playerState = PlayerState
+    public static event = Event
 }

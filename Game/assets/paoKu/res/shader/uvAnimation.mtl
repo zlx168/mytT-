@@ -10,7 +10,17 @@
   "_techniqueData": {
     "0": {
       "defines": {
-        "USE_TEXTURE": true
+        "USE_TEXTURE": true,
+        "USE_ALPHA_TEST": true
+      },
+      "props": {
+        "param": 10000,
+        "subture": {
+          "__uuid__": "893d1be5-abd7-4b9f-8049-e09092599ca7"
+        },
+        "difusebture": {
+          "__uuid__": "893d1be5-abd7-4b9f-8049-e09092599ca7"
+        }
       }
     }
   }

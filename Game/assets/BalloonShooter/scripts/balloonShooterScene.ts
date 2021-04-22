@@ -97,7 +97,7 @@ export default class balloonShooterScene extends cc.Component {
 
     start() {
         cc.director.getCollisionManager().enabled = true
-        if (false&&cc.sys.isNative) {
+        if (cc.sys.isNative) {
             let node = cc.instantiate(this.loadRes)
             let loadResScript: loadRes = node.getComponent("loadRes")
             loadResScript.getGameConfig(0, (gameConfig) => {

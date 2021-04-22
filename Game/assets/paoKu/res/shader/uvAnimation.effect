@@ -12,7 +12,9 @@ CCEffect %{
         cullMode: none
       properties:
         texture: { value: white }
+        subture: { value: white }
         alphaThreshold: { value: 0.5 }
+        param: { value: 2.0 }
 }%
 
 
@@ -26,10 +28,10 @@ CCProgram vs %{
   in vec4 a_color;
   out vec4 v_color;
 
-  #if USE_TEXTURE
+
   in vec2 a_uv0;
   out vec2 v_uv0;
-  #endif
+
 
   void main () {
     vec4 pos = vec4(a_position, 1);
@@ -40,9 +42,9 @@ CCProgram vs %{
     pos = cc_matViewProj * pos;
     #endif
 
-    #if USE_TEXTURE
+    
     v_uv0 = a_uv0;
-    #endif
+    
 
     v_color = a_color;
 
@@ -60,24 +62,31 @@ CCProgram fs %{
 
   in vec4 v_color;
 
-  #if USE_TEXTURE
+ 
   in vec2 v_uv0;
   uniform sampler2D texture;
-  #endif
+  uniform sampler2D subture;
 
+
+  uniform Prame{
+    float param;
+  };
   void main () {
    
     
     vec4 o = vec4(1, 1, 1, 1);
 
-    #if USE_TEXTURE
-      float offset = 0.50;
-      float TIME = cc_time.x;
-      float x = v_uv0.x + offset * TIME;
-      vec2 tem = vec2(x,v_uv0.y)
-      CCTexture(texture, v_uv0, o);
-    #endif
+ 
+    // float offset = 0.50;
+    float TIME = param;
+    //TIME -= param;
+    // vec2 tem = vec2(x,v_uv0.y)
+    // CCTexture(texture, v_uv0, o);
+    vec2 offset = vec2(TIME, 0);
 
+    vec4 final = texture2D(subture, v_uv0 + offset);
+
+    o = final ;
     o *= v_color;
 
     ALPHA_TEST(o);

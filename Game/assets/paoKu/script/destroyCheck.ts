@@ -6,6 +6,7 @@
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
 import bgManager from "./bgManager";
+import constant from "./constant";
 import obStacleManager from "./obstacleManager";
 
 const TYPE = cc.Enum({
@@ -45,7 +46,7 @@ export default class bgDestroyCheck extends cc.Component {
                     if(index < 0){
                         return
                     }
-                    let posX = this.node.parent.children[length - 1].x + cc.winSize.width 
+                    let posX = this.node.parent.children[length - 1].x + cc.winSize.width - 2
                     this.node.parent.children.splice(index,1)
                     this.node.parent.children.push(this.node)
                     this.node.setPosition(cc.v2(posX,this.node.y))
@@ -53,8 +54,9 @@ export default class bgDestroyCheck extends cc.Component {
                 }
                 case TYPE.OBSTACLE: {
                     let script:obStacleManager = this.node.parent.getComponent("obstacleManager")
-                    script.createObstacle(1)
+                    //script.createObstacle(1)
                     this.node.destroy()
+                    cc.systemEvent.emit(constant.event.CREATE_OBSTACLE,1)
                     break;
                 }
             }

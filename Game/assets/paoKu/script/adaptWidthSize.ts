@@ -5,24 +5,25 @@
 // Learn life-cycle callbacks:
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
-const {ccclass, property} = cc._decorator;
+const { ccclass, property } = cc._decorator;
 
 @ccclass
-export default class NewClass extends cc.Component {
+export default class  adaptWidthSize extends cc.Component {
 
-    @property(cc.Node)
-    hero: cc.Node = null;
-
-    @property
-    text: string = 'hello';
 
     // LIFE-CYCLE CALLBACKS:
 
-    // onLoad () {}
+   
 
-    start () {
-
+    onLoad(){
+        this.node.width = cc.winSize.width
     }
 
-    // update (dt) {}
+    start() {
+
+    }
+    
+
+  
+
 }

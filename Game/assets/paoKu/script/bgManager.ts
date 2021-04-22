@@ -15,15 +15,17 @@ export default class bgManager extends cc.Component {
     @property(cc.Prefab)
     bgPrefab:cc.Prefab = null
     lastPosx = 0
+    onLoad(){
+    }
     start () {
-     
+       
     }
     createBg(num){
         for(let i = 0; i < num; ++i){
             const node = cc.instantiate(this.bgPrefab)
-            node.setPosition(this.lastPosx,0)
-            this.lastPosx += cc.winSize.width
             node.parent = this.node
+            node.setPosition(this.lastPosx,0)
+            this.lastPosx += cc.winSize.width - 2
         }
     }
 
