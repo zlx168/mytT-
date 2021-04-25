@@ -23,6 +23,10 @@ export default class jieSuan extends cc.Component {
     score:cc.Label = null
     destNation:any = null
 
+    @property(cc.AudioClip)
+
+    starEffect:cc.AudioClip = null
+
     private numScore = 0 
     onLoad(){
         this.node.width = cc.director.getWinSize().width
@@ -83,9 +87,7 @@ export default class jieSuan extends cc.Component {
         // return p 
         let p = new Promise(resolve=>{ 
             node.runAction(cc.sequence(cc.delayTime(0.3),cc.callFunc(()=>{
-                if(cc.find("audioManager")){
-                    cc.find("audioManager").getComponent("audioManager").playShowStarMusic()
-                }
+                cc.audioEngine.playEffect(this.starEffect,false)
                 node.opacity = 255,
                 resolve(0)
             })))

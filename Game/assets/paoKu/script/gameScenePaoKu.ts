@@ -11,6 +11,7 @@ import obStacleManager from "./obstacleManager";
 import constant from "./constant";
 import loadRes from "../../comon/scripts/loadRes";
 import jieSuan from "../../comon/scripts/jieSuan";
+import poolManager from "./poolManager";
 
 const { ccclass, property } = cc._decorator;
 
@@ -19,7 +20,7 @@ export default class gameScenePaoKu extends cc.Component {
 
     private curentTime = 0 //当前时间
 
-    private totalTime = 120//总时间
+    private totalTime = 320//总时间
 
     //课程单词学习内容
     wordList = ["apple", "mango", "peach", "watermelon"]
@@ -29,6 +30,9 @@ export default class gameScenePaoKu extends cc.Component {
     //课程单词音乐
     @property(cc.AudioClip)
     wordMusicList: cc.AudioClip[] = []
+
+    @property(cc.AudioClip)
+    bgMusic:cc.AudioClip = null
 
 
     @property(cc.Node)
@@ -91,6 +95,10 @@ export default class gameScenePaoKu extends cc.Component {
        
     }
 
+    playBgMusic(){
+        cc.audioEngine.playMusic(this.bgMusic,true)
+    }
+
      async readyGame(){
         this.showButtonWithPause(false)
         console.log("readGame")
@@ -110,6 +118,7 @@ export default class gameScenePaoKu extends cc.Component {
     showButtonWithPause(visible:boolean){
         this.btnPause.active = visible
         this.timeNode.active = visible
+        this.node.getChildByName("UIRoot").getChildByName("Jump").active = visible
     }
 
 
@@ -272,6 +281,7 @@ export default class gameScenePaoKu extends cc.Component {
 
     startGame(){
         this.startTime()
+        this.playBgMusic()
         this.showButtonWithPause(true)
         this.updateStutyWordLayout()
         this.hero.getComponent("hero").run()
@@ -280,11 +290,10 @@ export default class gameScenePaoKu extends cc.Component {
         this.createObstacle(20)
     }
     jump() {
-       
         this.hero.getComponent("hero").jump(300, 500, () => {
             
         })
-
+    
     }
 
     
@@ -399,10 +408,10 @@ export default class gameScenePaoKu extends cc.Component {
     }
 
     pauseGame(){
-        cc.systemEvent.emit(constant.event.PAUSE_ANIMATION)
+        cc.systemEvent.emit(constant.event.PAUSE_ACTION)
     }
     resumeGame(){
-        cc.systemEvent.emit(constant.event.RESERME_AIMATION)
+        cc.systemEvent.emit(constant.event.RESERME_ACTION)
     }
 
     onClickPause(){
@@ -419,6 +428,7 @@ export default class gameScenePaoKu extends cc.Component {
         cc.systemEvent.off(constant.event.GAME_OVER,this.gameOver,this)
         cc.systemEvent.off(constant.event.ADD_SCORE,this.addScore,this)
         this.stopTime() 
+        poolManager.instance().clearAll()
     }
     // update (dt) {}  
 }

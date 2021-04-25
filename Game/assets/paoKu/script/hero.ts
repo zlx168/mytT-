@@ -4,6 +4,7 @@
 //  - https://docs.cocos.com/creator/manual/en/scripting/reference/attributes.html
 // Learn life-cycle callbacks:
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
+import audioManagerPaoKu from "./audioManagerPaoKu";
 import camera from "./camera";
 import constant from "./constant";
 import gameScenePaoKu from "./gameScenePaoKu";
@@ -28,10 +29,18 @@ export default class hero extends cc.Component {
     @property(gameScenePaoKu)
 
     gameScene:gameScenePaoKu = null
+
+    _adioManager:audioManagerPaoKu = null 
+    onLoad(){
+         this._adioManager = cc.find("audioManager").getComponent("audioManagerPaoKu")
+         
+    }
     start() {
+       
         this._spine = this.getComponent(sp.Skeleton)
         this.offset = this.node.position.sub(this.camera.position)
         console.log("照相机", this.camera)
+        console.log(this._adioManager,"声音管理器")
         this._spine.setCompleteListener(trackEntry => {
             var animationName = trackEntry.animation ? trackEntry.animation.name : "";
             // if (animationName === 'shoot') {
@@ -43,8 +52,8 @@ export default class hero extends cc.Component {
                 this.run()
             }
         })
-        cc.systemEvent.on(constant.event.PAUSE_ANIMATION,this.pauseAnimation,this)
-        cc.systemEvent.on(constant.event.RESERME_AIMATION,this.resermAniamtion,this)
+        cc.systemEvent.on(constant.event.PAUSE_ACTION,this.pauseAnimation,this)
+        cc.systemEvent.on(constant.event.RESERME_ACTION,this.resermAniamtion,this)
     }
     public jump(height: number, distance: number, onFinishCb?: Function) {
         if(this.gameScene._gameOver || this.gameScene._gamePause){
@@ -53,6 +62,8 @@ export default class hero extends cc.Component {
         if(this.node.getNumberOfRunningActions() > 0){
             return
         }
+        this._stopRunEffect()
+        this._playJumEffect()
         this._state = constant.playerState.JUMP
         this._playJumpAnimation()
         this.node.runAction(cc.sequence(cc.jumpBy(1, cc.v2(0, 0), height, 1), cc.callFunc(() => {
@@ -76,13 +87,25 @@ export default class hero extends cc.Component {
     private _playJumpAnimation() {
         this._spine.setAnimation(0, "tiao", false)
     }
+    _playJumEffect(){
+        this._adioManager.playJumpMusic()
+    }
 
     public run() {
+        this._playRunEffect()
+        this.showParticle(true)
         this._playRunAnimaiton()
         this._state = constant.playerState.RUNGING
     }
     public stop() {
         this._state = constant.playerState.STOP
+    }
+
+    _playRunEffect(){
+        this._adioManager.playRunMusic()
+    }
+    _stopRunEffect(){
+        this._adioManager.stopRunMusic()
     }
 
     _stopAnimation(){
@@ -104,8 +127,8 @@ export default class hero extends cc.Component {
     }
 
     onDestroy() {
-        cc.systemEvent.off(constant.event.PAUSE_ANIMATION,this.pauseAnimation,this)
-        cc.systemEvent.off(constant.event.RESERME_AIMATION,this.resermAniamtion,this)
+        cc.systemEvent.off(constant.event.PAUSE_ACTION,this.pauseAnimation,this)
+        cc.systemEvent.off(constant.event.RESERME_ACTION,this.resermAniamtion,this)
     }
 
 
@@ -132,31 +155,35 @@ export default class hero extends cc.Component {
         // var ps = world.points;
         if (self.node.group === "player" && other.node.group === "obstacle") {
             let com:obstacle = other.node.getComponent("obstacle")
-            if(com._isCollider){
+            if(com._hasCollider){
                 return
             }
-            com._isCollider = true
+            com._hasCollider = true
             cc.systemEvent.emit(constant.event.GAME_OVER)
         }
         else if(self.node.group === "player" && other.node.group === "obstacleIcon"){
             let com:icon = other.node.getComponent("icon")
-            if(com._isCollider){
+            if(com._hasCollider){
                 return
             }
-            com._isCollider = true
-            com.playMusic()
+            com._hasCollider = true
+           
+            this._adioManager.playEatDaoJuMusic(()=>{
+                
+            })
             com.playWordAnimation()
+            com.playMusic()
             cc.systemEvent.emit(constant.event.ADD_SCORE,other.node.name,1)
         }
     }
 
     pauseAnimation(){
-        this.node.getChildByName("particle").active = false//.getComponent(cc.ParticleSystem)
+        this.showParticle(false)
         this._spine.paused = true
         this.node.pauseAllActions()
     }
     resermAniamtion(){
-        this.node.getChildByName("particle").active = true //.getComponent(cc.ParticleSystem)
+        this.showParticle(true)
         this._spine.paused = false
         this.node.resumeAllActions()
     }
@@ -166,4 +193,10 @@ export default class hero extends cc.Component {
     onCollisionExit(other: cc.Collider, self: cc.Collider) {
         console.log('on collision exit');
     }
+
+    showParticle(visible){
+        this.node.getChildByName("particle").active = visible
+    }
+
 }
+

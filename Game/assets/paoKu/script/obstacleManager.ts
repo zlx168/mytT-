@@ -5,8 +5,10 @@
 // Learn life-cycle callbacks:
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
+import daojuManager from "./daojuManager";
 import gameScenePaoKu from "./gameScenePaoKu";
 import obstacle from "./obstacle";
+import poolManager from "./poolManager";
 
 const { ccclass, property } = cc._decorator;
 
@@ -26,12 +28,20 @@ export default class obStacleManager extends cc.Component {
 
     // LIFE-CYCLE CALLBACKS:
 
+    @property(cc.Node)
+    daoJuManagerNode:cc.Node = null
+    _daoJuManager:daojuManager = null
+
+    private _poolManger:poolManager = null
     onLoad () {
         this.startX = cc.winSize.width
+        this._daoJuManager = this.daoJuManagerNode.getComponent("daojuManager")
+        this._poolManger = poolManager.instance()
+        this._poolManger.initObstacleNodePoolList(this.obstacleList,[10,10,10])
     }
 
     start() {
-
+        
     }
 
     setGameScene(gameScene){
@@ -47,7 +57,7 @@ export default class obStacleManager extends cc.Component {
         } else {
             index = 2
         }
-        let node = cc.instantiate(this.obstacleList[index])
+        let node = this._poolManger.getObstacleNode(index)
 
         if (this.node.children.length <= 0) {
             node.x = this.startX
@@ -58,10 +68,11 @@ export default class obStacleManager extends cc.Component {
             let rx = this.creatRandX()
             node.x = lastPos.x + rx
             node.y = this.posY
+            this._daoJuManager.creatDaoJu(lastPos.x, lastPos.x + rx)
         }
         node.parent = this.node
-
         const script: obstacle = node.getComponent("obstacle")
+        script._prefabIndex = index
         script.setIconMusicWord(icon, music, word)
 
     }

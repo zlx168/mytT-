@@ -1,7 +1,7 @@
 {
   "title": "Game",
   "packageName": "org.cocos2d.demo",
-  "startScene": "b1d025ed-c9c9-4fce-b23d-2d737bcd9499",
+  "startScene": "eaa9c9b0-0afb-465a-aa67-2a8f3fe51c4a",
   "excludeScenes": [],
   "orientation": {
     "landscapeLeft": true,
@@ -9,13 +9,13 @@
     "portrait": false,
     "upsideDown": false
   },
-  "webOrientation": "auto",
+  "webOrientation": "landscape",
   "inlineSpriteFrames": true,
   "inlineSpriteFrames_native": true,
   "mainCompressionType": "default",
   "mainIsRemote": false,
   "optimizeHotUpdate": false,
-  "md5Cache": true,
+  "md5Cache": false,
   "nativeMd5Cache": false,
   "encryptJs": true,
   "xxteaKey": "a84b6f63-a1a6-48",

@@ -407,6 +407,7 @@ export default class balloonShooterScene extends cc.Component {
             sequence[num] = sequence[end];
             end--;
         }
+        console.log("总个数",total)
         console.log("随机出来得数字", output)
 
         let posList = []

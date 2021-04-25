@@ -7,11 +7,14 @@
 
 import bgManager from "./bgManager";
 import constant from "./constant";
+import obstacle from "./obstacle";
 import obStacleManager from "./obstacleManager";
+import poolManager from "./poolManager";
 
 const TYPE = cc.Enum({
     BG: 1,
-    OBSTACLE: 2
+    OBSTACLE: 2,
+    ICON: 3
 });
 
 
@@ -55,9 +58,15 @@ export default class bgDestroyCheck extends cc.Component {
                 case TYPE.OBSTACLE: {
                     let script:obStacleManager = this.node.parent.getComponent("obstacleManager")
                     //script.createObstacle(1)
-                    this.node.destroy()
+                    //this.node.destroy()
+                    const scriptObs:obstacle = this.node.getComponent("obstacle")
+                    poolManager.instance().putObstacleNode(scriptObs._prefabIndex,this.node)
                     cc.systemEvent.emit(constant.event.CREATE_OBSTACLE,1)
                     break;
+                }
+                case TYPE.ICON:{
+                    //this.node.destroy()
+                    poolManager.instance().putIconNode(this.node)
                 }
             }
         }

@@ -1,33 +1,33 @@
 
 Running.png
-size: 512,512
+size: 512,1024
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
 weiba
   rotate: false
-  xy: 296, 187
+  xy: 144, 174
   size: 30, 35
   orig: 30, 35
   offset: 0, 0
   index: -1
 椭圆 1
   rotate: false
-  xy: 76, 206
+  xy: 1, 808
   size: 138, 20
   orig: 138, 20
   offset: 0, 0
   index: -1
 zuoshou
   rotate: false
-  xy: 458, 193
+  xy: 451, 481
   size: 41, 86
   orig: 41, 86
   offset: 0, 0
   index: -1
 zuojiao
   rotate: false
-  xy: 1, 174
+  xy: 406, 708
   size: 73, 72
   orig: 73, 72
   offset: 0, 0
@@ -60,24 +60,192 @@ zuoer
   orig: 172, 126
   offset: 0, 0
   index: -1
-yanjing1
-  rotate: false
-  xy: 458, 106
-  size: 44, 85
-  orig: 53, 93
-  offset: 6, 0
-  index: -1
 yanjing2
   rotate: false
-  xy: 296, 129
+  xy: 404, 569
   size: 51, 56
   orig: 53, 93
   offset: 2, 32
   index: -1
+yanjing1
+  rotate: false
+  xy: 405, 481
+  size: 44, 85
+  orig: 53, 93
+  offset: 6, 0
+  index: -1
 zuiba
   rotate: false
-  xy: 185, 129
+  xy: 390, 783
   size: 109, 75
   orig: 109, 75
   offset: 0, 0
+  index: -1
+眩晕_00005
+  rotate: false
+  xy: 137, 458
+  size: 130, 80
+  orig: 256, 256
+  offset: 59, 92
+  index: -1
+眩晕_00018
+  rotate: false
+  xy: 273, 402
+  size: 139, 77
+  orig: 256, 256
+  offset: 57, 93
+  index: -1
+眩晕_00017
+  rotate: false
+  xy: 185, 129
+  size: 146, 81
+  orig: 256, 256
+  offset: 55, 91
+  index: -1
+眩晕_00001
+  rotate: false
+  xy: 275, 320
+  size: 134, 80
+  orig: 256, 256
+  offset: 55, 97
+  index: -1
+眩晕_00003
+  rotate: false
+  xy: 1, 342
+  size: 134, 80
+  orig: 256, 256
+  offset: 55, 91
+  index: -1
+眩晕_00021
+  rotate: false
+  xy: 275, 637
+  size: 133, 69
+  orig: 256, 256
+  offset: 58, 98
+  index: -1
+眩晕_00016
+  rotate: false
+  xy: 1, 174
+  size: 141, 83
+  orig: 256, 256
+  offset: 55, 89
+  index: -1
+眩晕_00006
+  rotate: false
+  xy: 1, 660
+  size: 128, 74
+  orig: 256, 256
+  offset: 60, 97
+  index: -1
+眩晕_00022
+  rotate: false
+  xy: 137, 637
+  size: 136, 72
+  orig: 256, 256
+  offset: 56, 99
+  index: -1
+眩晕_00019
+  rotate: false
+  xy: 275, 708
+  size: 129, 71
+  orig: 256, 256
+  offset: 60, 97
+  index: -1
+眩晕_00010
+  rotate: false
+  xy: 1, 504
+  size: 134, 77
+  orig: 256, 256
+  offset: 53, 91
+  index: -1
+眩晕_00009
+  rotate: false
+  xy: 137, 540
+  size: 130, 73
+  orig: 256, 256
+  offset: 55, 95
+  index: -1
+眩晕_00013
+  rotate: false
+  xy: 269, 481
+  size: 134, 76
+  orig: 256, 256
+  offset: 55, 92
+  index: -1
+眩晕_00020
+  rotate: false
+  xy: 131, 711
+  size: 128, 70
+  orig: 256, 256
+  offset: 60, 98
+  index: -1
+眩晕_00004
+  rotate: false
+  xy: 280, 236
+  size: 132, 82
+  orig: 256, 256
+  offset: 57, 90
+  index: -1
+眩晕_00015
+  rotate: false
+  xy: 1, 259
+  size: 134, 81
+  orig: 256, 256
+  offset: 55, 90
+  index: -1
+眩晕_00008
+  rotate: false
+  xy: 261, 781
+  size: 127, 68
+  orig: 256, 256
+  offset: 56, 99
+  index: -1
+眩晕_00012
+  rotate: false
+  xy: 1, 424
+  size: 134, 78
+  orig: 256, 256
+  offset: 55, 90
+  index: -1
+眩晕_00002
+  rotate: false
+  xy: 144, 212
+  size: 134, 81
+  orig: 256, 256
+  offset: 55, 93
+  index: -1
+眩晕_00007
+  rotate: false
+  xy: 1, 736
+  size: 128, 70
+  orig: 256, 256
+  offset: 58, 98
+  index: -1
+眩晕_00023
+  rotate: false
+  xy: 269, 559
+  size: 133, 76
+  orig: 256, 256
+  offset: 55, 99
+  index: -1
+眩晕_00000
+  rotate: false
+  xy: 137, 376
+  size: 134, 80
+  orig: 256, 256
+  offset: 55, 98
+  index: -1
+眩晕_00011
+  rotate: false
+  xy: 137, 295
+  size: 136, 79
+  orig: 256, 256
+  offset: 53, 89
+  index: -1
+眩晕_00014
+  rotate: false
+  xy: 1, 583
+  size: 134, 75
+  orig: 256, 256
+  offset: 55, 93
   index: -1
