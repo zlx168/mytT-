@@ -52,12 +52,12 @@ export default class obStacleManager extends cc.Component {
         let randVaule = Math.floor(Math.random() * 10)
         if (randVaule < 2) {
             index = 0
-        } else if (randVaule >= 2 && randVaule < 3) {
+        } else if (randVaule >= 2 && randVaule < 5 ) {
             index = 1
         } else {
             index = 2
         }
-        let node = this._poolManger.getObstacleNode(index)
+        let node:cc.Node = this._poolManger.getObstacleNode(index)
 
         if (this.node.children.length <= 0) {
             node.x = this.startX

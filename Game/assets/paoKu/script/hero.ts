@@ -19,11 +19,15 @@ const { ccclass, property } = cc._decorator;
 export default class hero extends cc.Component {
 
     private _state = constant.playerState.STOP
-    private _speed: number = 500
+    private _speed: number = 10
     private _spine: sp.Skeleton = null
 
     @property(cc.Node)
     private camera: cc.Node = null
+
+    @property(cc.Node)
+    private bgcamera: cc.Node = null
+
     private offset: cc.Vec3 = null
 
     @property(gameScenePaoKu)
@@ -31,12 +35,15 @@ export default class hero extends cc.Component {
     gameScene:gameScenePaoKu = null
 
     _adioManager:audioManagerPaoKu = null 
+
+    //intervalId = null
     onLoad(){
+         let self = this
          this._adioManager = cc.find("audioManager").getComponent("audioManagerPaoKu")
-         
+        // this.intervalId =  setInterval(this.intervalCallBack.bind(self),1)
+        this.bgcamera = cc.find("BgCamera")
     }
     start() {
-       
         this._spine = this.getComponent(sp.Skeleton)
         this.offset = this.node.position.sub(this.camera.position)
         console.log("照相机", this.camera)
@@ -52,6 +59,7 @@ export default class hero extends cc.Component {
                 this.run()
             }
         })
+        
         cc.systemEvent.on(constant.event.PAUSE_ACTION,this.pauseAnimation,this)
         cc.systemEvent.on(constant.event.RESERME_ACTION,this.resermAniamtion,this)
     }
@@ -120,20 +128,40 @@ export default class hero extends cc.Component {
             this.camera.x = this.node.position.sub(this.offset).x
         }
        
-       
+        if(this.bgcamera){
+            this.bgcamera.x += this._speed * dt * 0.6
+        }
        // if (this._state === constant.playerState.RUNGING) {
-            this.node.x += this._speed * dt
-       // }
+            this.node.x += this._speed 
     }
+      
+    
+
+    
+    // intervalCallBack(){
+    //     if(this.gameScene._gameOver || this.gameScene._gamePause){
+    //         return
+    //     }
+    //     if (this.camera) {
+    //         this.camera.x = this.node.position.sub(this.offset).x
+    //     }
+       
+    //     if(this.bgcamera){
+    //         this.bgcamera.x += this._speed * 0.6
+    //     }
+    //    // if (this._state === constant.playerState.RUNGING) {
+    //     this.node.x += this._speed 
+    // }
 
     onDestroy() {
         cc.systemEvent.off(constant.event.PAUSE_ACTION,this.pauseAnimation,this)
         cc.systemEvent.off(constant.event.RESERME_ACTION,this.resermAniamtion,this)
+        //clearInterval(this.intervalId)
     }
 
 
     onCollisionEnter(other: cc.Collider, self: cc.Collider) {
-        //console.log('on collision enter');
+        console.log('on collision enter');
 
         // 碰撞系统会计算出碰撞组件在世界坐标系下的相关的值，并放到 world 这个属性里面
         // var world = self.world;
@@ -152,6 +180,7 @@ export default class hero extends cc.Component {
         // var p = world.position;
         //
         // // 以下属性为 矩形 和 多边形 碰撞组件特有属性
+        
         // var ps = world.points;
         if (self.node.group === "player" && other.node.group === "obstacle") {
             let com:obstacle = other.node.getComponent("obstacle")
@@ -163,17 +192,14 @@ export default class hero extends cc.Component {
         }
         else if(self.node.group === "player" && other.node.group === "obstacleIcon"){
             let com:icon = other.node.getComponent("icon")
-            if(com._hasCollider){
-                return
-            }
-            com._hasCollider = true
-           
             this._adioManager.playEatDaoJuMusic(()=>{
                 
             })
+           
             com.playWordAnimation()
             com.playMusic()
             cc.systemEvent.emit(constant.event.ADD_SCORE,other.node.name,1)
+            other.node.getComponent(cc.BoxCollider).enabled = false
         }
     }
 
@@ -188,7 +214,7 @@ export default class hero extends cc.Component {
         this.node.resumeAllActions()
     }
     onCollisionStay(other: cc.Collider, self: cc.Collider) {
-       // console.log('on collision stay');
+        console.log('on collision stay');
     }
     onCollisionExit(other: cc.Collider, self: cc.Collider) {
         console.log('on collision exit');

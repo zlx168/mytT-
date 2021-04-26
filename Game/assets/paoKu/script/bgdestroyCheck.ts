@@ -12,7 +12,7 @@ const {ccclass, property} = cc._decorator;
 @ccclass
 export default class bgDestroyCheck extends cc.Component {
 
-    hero: cc.Node = null;
+    BgCamera: cc.Node = null;
 
 
     // LIFE-CYCLE CALLBACKS:
@@ -20,14 +20,13 @@ export default class bgDestroyCheck extends cc.Component {
     // onLoad () {}
 
     start () {
-        this.hero = this.node.parent.parent.getChildByName("hero")
-        console.log("hero",this.hero)
+        this.BgCamera = cc.find("Canvas").getChildByName("BgCamera")
     }
 
     update (dt) {
-        let distance = this.node.position.sub(this.hero.position).mag()
-        if(distance > cc.winSize.width * 2 && this.node.x < this.hero.x){
-            let script:bgManager =this.node.parent.getComponent("bgManager")
+        let distance = this.node.position.sub(this.BgCamera.position).mag()
+        if(distance > cc.winSize.width * 2 && this.node.x < this.BgCamera.x){
+           // let script:bgManager =this.node.parent.getComponent("bgManager")
             //script.createBg(1)
             //this.node.destroy()
             let length = this.node.parent.children.length

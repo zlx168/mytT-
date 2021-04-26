@@ -28,6 +28,8 @@ export default class jieSuan extends cc.Component {
     starEffect:cc.AudioClip = null
 
     private numScore = 0 
+
+    gameSceneName = null
     onLoad(){
         this.node.width = cc.director.getWinSize().width
         this.node.height = cc.director.getWinSize().height
@@ -37,7 +39,7 @@ export default class jieSuan extends cc.Component {
         this.destNation = this.node.getChildByName("starCount").position
     }
 
-    show(tongJi:{},wordIconList:any[],starNumber:number){
+    show(tongJi:{},wordIconList:any[],starNumber:number,gameSceneName?:string){
         let i = 0;
         for(let key in tongJi){
             let node = cc.instantiate(this.itemPrefab)
@@ -48,6 +50,9 @@ export default class jieSuan extends cc.Component {
             i++
         }
         this.showAllStar(starNumber)
+        if(gameSceneName){
+            this.gameSceneName = gameSceneName
+        }
     }
     async showAllStar(num:number){
         // let curentScore = parseInt(this.score.string)
@@ -114,5 +119,10 @@ export default class jieSuan extends cc.Component {
         return p
     }
     
+    onClickStartGame(){
+        if(this.gameSceneName){
+            cc.director.loadScene(this.gameSceneName)
+        }
+    }
     // update (dt) {}
 }

@@ -51,6 +51,8 @@ export default class icon extends cc.Component {
         this._hasCollider = false
         this.node.position = this.startPos
         this.node.scale = 1
+        this.node.getComponent(cc.BoxCollider).enabled = true
+        console.log("reset")
     }
 
     start () {
@@ -104,9 +106,11 @@ export default class icon extends cc.Component {
         this._animationNode.active = true
         this.node.getComponent(cc.Sprite).enabled = false
         this._animation.play("wordAnimation")
+        console.log("playWordAnimation")
     }
 
     playUpDownAction(){
+        this.node.stopAction(this._upDownAction)
         this._upDownAction = this.node.runAction(cc.repeatForever(cc.sequence(cc.moveBy(1,cc.v2(0,50)),cc.moveBy(1,cc.v2(0,-50)))))
     }
     pauseAction(){
@@ -116,6 +120,7 @@ export default class icon extends cc.Component {
         this.node.resumeAllActions()
     }
     onDestroy(){
+        this.node.stopAction(this._upDownAction)
         cc.systemEvent.off(constant.event.PAUSE_ACTION,this.pauseAction,this)
         cc.systemEvent.off(constant.event.RESERME_ACTION,this.resumeAction,this)
     }

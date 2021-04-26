@@ -14,6 +14,10 @@ export default class bgManager extends cc.Component {
 
     @property(cc.Prefab)
     bgPrefab:cc.Prefab = null
+
+    @property(cc.Prefab)
+    bgBackPrefab:cc.Prefab = null
+
     lastPosx = 0
     onLoad(){
     }
@@ -25,6 +29,10 @@ export default class bgManager extends cc.Component {
             const node = cc.instantiate(this.bgPrefab)
             node.parent = this.node
             node.setPosition(this.lastPosx,0)
+            //this.lastPosx += cc.winSize.width - 2
+            const nodeBgBack = cc.instantiate(this.bgBackPrefab)
+            nodeBgBack.parent = this.node.getChildByName("bgBackList")
+            nodeBgBack.setPosition(this.lastPosx,0)
             this.lastPosx += cc.winSize.width - 2
         }
     }

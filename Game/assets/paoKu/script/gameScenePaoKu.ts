@@ -75,13 +75,14 @@ export default class gameScenePaoKu extends cc.Component {
     _gamePause = true
 
     start() {
+
         cc.director.getCollisionManager().enabled = true
-        cc.director.getCollisionManager().enabledDebugDraw = true
+        //cc.director.getCollisionManager().enabledDebugDraw = true
 
         cc.systemEvent.on(constant.event.CREATE_OBSTACLE,this.createObstacle,this)
         cc.systemEvent.on(constant.event.GAME_OVER,this.gameOver,this)
         cc.systemEvent.on(constant.event.ADD_SCORE,this.addScore,this)
-        if (cc.sys.isNative) {
+        if (false&&cc.sys.isNative) {
             let node = cc.instantiate(this.loadRes)
             let loadResScript: loadRes = node.getComponent("loadRes")
             loadResScript.getGameConfig(0, (gameConfig) => {
@@ -92,7 +93,6 @@ export default class gameScenePaoKu extends cc.Component {
         else {
             this.readyGame()
         }
-       
     }
 
     playBgMusic(){
@@ -287,7 +287,7 @@ export default class gameScenePaoKu extends cc.Component {
         this.hero.getComponent("hero").run()
         this._gamePause = false
         this.bgManager.createBg(5)
-        this.createObstacle(20)
+        this.createObstacle(10)
     }
     jump() {
         this.hero.getComponent("hero").jump(300, 500, () => {
@@ -329,7 +329,7 @@ export default class gameScenePaoKu extends cc.Component {
         let jieSuanNode = cc.instantiate(this.jieSuanPrefab)
         jieSuanNode.group = "UI"
         let script:jieSuan = jieSuanNode.getComponent("jieSuan")
-        script.show(this.tongJi, this.wordIconList, this.getStarNumber())
+        script.show(this.tongJi, this.wordIconList, this.getStarNumber(),"gameScenePaoKu")
         this.node.addChild(jieSuanNode)
     }
 
@@ -415,10 +415,13 @@ export default class gameScenePaoKu extends cc.Component {
     }
 
     onClickPause(){
+        
         this._gamePause = !this._gamePause
         if(this._gamePause){
+            //cc.director.pause()
             this.pauseGame()
         }else{
+            //cc.director.resume()
             this.resumeGame()
         }
     }

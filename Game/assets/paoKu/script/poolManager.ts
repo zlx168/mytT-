@@ -66,21 +66,23 @@ export default class poolManager  {
 
     public getObstacleNode(index){
         let node = null;
-        if (this._obstacleNodePoolList[index].size() <= 0) { // 通过 size 接口判断对象池中是否有空闲的对象
-            let node = cc.instantiate(this._obstaclePrefabList[index])
-            this._obstacleNodePoolList[index].put(node)
+        if (this._obstacleNodePoolList[index].size() > 0) { // 通过 size 接口判断对象池中是否有空闲的对象
+            node = this._obstacleNodePoolList[index].get();
         } 
-        node = this._obstacleNodePoolList[index].get();
+        else{
+           node = cc.instantiate(this._obstaclePrefabList[index])
+        }
         return node
     }
 
     public getIconNode(){
         let node = null;
-        if (this._iconNodePool.size() <= 0) { // 通过 size 接口判断对象池中是否有空闲的对象
-           let node = cc.instantiate(this._iconPrefab)
-           this._iconNodePool.put(node)
+        if (this._iconNodePool.size() > 0) { // 通过 size 接口判断对象池中是否有空闲的对象
+            node = this._iconNodePool.get();
         } 
-        node = this._iconNodePool.get();
+        else{
+            node = cc.instantiate(this._iconPrefab)
+        }
         return node
     }
 
