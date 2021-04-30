@@ -74,7 +74,6 @@ export default class obStacleManager extends cc.Component {
         const script: obstacle = node.getComponent("obstacle")
         script._prefabIndex = index
         script.setIconMusicWord(icon, music, word)
-
     }
 
     rnd(min, max) {

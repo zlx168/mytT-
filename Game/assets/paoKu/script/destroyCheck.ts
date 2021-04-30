@@ -48,7 +48,7 @@ export default class bgDestroyCheck extends cc.Component {
                     if(index < 0){
                         return
                     }
-                    let posX = this.node.parent.children[length - 1].x + cc.winSize.width - 4
+                    let posX = this.node.parent.children[length - 1].x + cc.winSize.width 
                     this.node.parent.children.splice(index,1)
                     this.node.parent.children.push(this.node)
                     this.node.setPosition(cc.v2(posX,this.node.y))
@@ -61,6 +61,7 @@ export default class bgDestroyCheck extends cc.Component {
                     const scriptObs:obstacle = this.node.getComponent("obstacle")
                     poolManager.instance().putObstacleNode(scriptObs._prefabIndex,this.node)
                     cc.systemEvent.emit(constant.event.CREATE_OBSTACLE,1)
+                    console.log("创建新得障碍物")
                     break;
                 }
                 case TYPE.ICON:{

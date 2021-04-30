@@ -19,7 +19,7 @@ const { ccclass, property } = cc._decorator;
 export default class hero extends cc.Component {
 
     private _state = constant.playerState.STOP
-    private _speed: number = 10
+    private _speed: number = 500
     private _spine: sp.Skeleton = null
 
     @property(cc.Node)
@@ -36,14 +36,20 @@ export default class hero extends cc.Component {
 
     _adioManager:audioManagerPaoKu = null 
 
+    private meter:number = 0
+    
+
+    private desiredMeter = 0 
+
     //intervalId = null
     onLoad(){
          let self = this
          this._adioManager = cc.find("audioManager").getComponent("audioManagerPaoKu")
         // this.intervalId =  setInterval(this.intervalCallBack.bind(self),1)
-        this.bgcamera = cc.find("BgCamera")
+        this.bgcamera = cc.find("Canvas").getChildByName("BgCamera")
     }
     start() {
+        this.startMeterSchedule()
         this._spine = this.getComponent(sp.Skeleton)
         this.offset = this.node.position.sub(this.camera.position)
         console.log("照相机", this.camera)
@@ -59,6 +65,8 @@ export default class hero extends cc.Component {
                 this.run()
             }
         })
+
+        cc.Camera
         
         cc.systemEvent.on(constant.event.PAUSE_ACTION,this.pauseAnimation,this)
         cc.systemEvent.on(constant.event.RESERME_ACTION,this.resermAniamtion,this)
@@ -82,6 +90,17 @@ export default class hero extends cc.Component {
                 onFinishCb()
             }
         })))
+        // let upAction = cc.moveBy(0.5,cc.v2(0,height))
+        // let downAciton = cc.moveBy(0.5,cc.v2(0,-height))
+        // let sqAc = cc.sequence(upAction,downAciton)//.easing(cc.easeBackInOut())
+        // this.node.runAction(cc.sequence(sqAc,cc.callFunc(()=>{
+        //     console.log(this.node.position)
+        //     this._playRunAnimaiton()
+        //     this.run()
+        //     if (onFinishCb) {
+        //         onFinishCb()
+        //     }
+        // })))
     }
 
     private _playRunAnimaiton() {
@@ -121,21 +140,56 @@ export default class hero extends cc.Component {
     }
 
     update(dt) {
+        //console.log("英雄的update")
         if(this.gameScene._gameOver || this.gameScene._gamePause){
             return
         }
         if (this.camera) {
-            this.camera.x = this.node.position.sub(this.offset).x
+            //this.camera.x = this.node.position.sub(this.offset).x
+            this.camera.x += this._speed * dt 
         }
        
         if(this.bgcamera){
             this.bgcamera.x += this._speed * dt * 0.6
         }
-       // if (this._state === constant.playerState.RUNGING) {
-            this.node.x += this._speed 
+        //if (this._state === constant.playerState.RUNGING) {
+            this.node.x += this._speed * dt 
+        //}
+        //else if(this._state === constant.playerState.JUMP){
+            //console.log("当前坐标",this.node.x )
+       // }
+    //    this.desiredMeter = this.meter + this._speed / 500 * dt
+    //    this.desiredMeter = Math.ceil(this.desiredMeter)
+    //    if(this.meter < this.desiredMeter){
+    //        this.meter += 1
+    //        this.gameScene.updateMeter(this.meter)
+    //    }
     }
       
+
+    meterSchedule(dt){
+        if(this.gameScene._gameOver || this.gameScene._gamePause){
+            return
+        }
+        let tempMeter = this.meter
+        this.meter += this._speed / 500 * dt
+        this.meter = Math.round(this.meter)
+        for(let i = tempMeter ; i < this.meter; ++i){
+            this.scheduleOnce(()=>{
+                this.gameScene.updateMeter(this.meter)
+            },0.2)
+        }
+        
+    }
     
+
+    startMeterSchedule(){
+        this.schedule(this.meterSchedule,1)
+    }
+
+    stopMeterSchedule(){
+        this.unschedule(this.meterSchedule)
+    }
 
     
     // intervalCallBack(){
@@ -156,6 +210,7 @@ export default class hero extends cc.Component {
     onDestroy() {
         cc.systemEvent.off(constant.event.PAUSE_ACTION,this.pauseAnimation,this)
         cc.systemEvent.off(constant.event.RESERME_ACTION,this.resermAniamtion,this)
+        this.stopMeterSchedule()
         //clearInterval(this.intervalId)
     }
 

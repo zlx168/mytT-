@@ -70,7 +70,7 @@ export default class icon extends cc.Component {
         this.node.width = this._icon.getOriginalSize().width
         this.node.height = this._icon.getOriginalSize().height
 
-        console.log("Textrure:width;height,word",this._icon.getOriginalSize().width,  this._icon.getOriginalSize().height,word)
+        //console.log("Textrure:width;height,word",this._icon.getOriginalSize().width,  this._icon.getOriginalSize().height,word)
         
         this.node.getComponent(cc.Sprite).spriteFrame = this._icon
         if(!this._animationNode){

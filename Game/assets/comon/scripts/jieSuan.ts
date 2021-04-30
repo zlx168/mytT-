@@ -39,7 +39,7 @@ export default class jieSuan extends cc.Component {
         this.destNation = this.node.getChildByName("starCount").position
     }
 
-    show(tongJi:{},wordIconList:any[],starNumber:number,gameSceneName?:string){
+    show(tongJi:{},wordIconList:any[],starNumber:number,gameSceneName?:string,meterNum?:number){
         let i = 0;
         for(let key in tongJi){
             let node = cc.instantiate(this.itemPrefab)
@@ -52,6 +52,12 @@ export default class jieSuan extends cc.Component {
         this.showAllStar(starNumber)
         if(gameSceneName){
             this.gameSceneName = gameSceneName
+        }
+        if(meterNum){
+            let meter = this.node.getChildByName("meter")
+            meter.active = true
+            meter.getChildByName("num").getComponent(cc.Label).string = meterNum.toString()
+            meter.getComponent(cc.Layout).updateLayout()
         }
     }
     async showAllStar(num:number){

@@ -16,7 +16,7 @@ export default class  adaptWidthSize extends cc.Component {
    
 
     onLoad(){
-        this.node.width = cc.winSize.width
+        this.node.width = cc.winSize.width + 10
     }
 
     start() {

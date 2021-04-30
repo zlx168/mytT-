@@ -34,6 +34,8 @@ export default class gameScenePaoKu extends cc.Component {
     @property(cc.AudioClip)
     bgMusic:cc.AudioClip = null
 
+    private meter:number = 0 
+
 
     @property(cc.Node)
     hero:cc.Node = null
@@ -41,8 +43,6 @@ export default class gameScenePaoKu extends cc.Component {
     bgManager: bgManager = null
     @property(obStacleManager)
     obstacleManager: obStacleManager = null
-    @property(cc.Node)
-    bg: cc.Node = null
 
     @property(cc.Prefab)
     loadRes: cc.Prefab = null
@@ -68,6 +68,12 @@ export default class gameScenePaoKu extends cc.Component {
     timeNode: cc.Node = null
     @property(cc.Node)
     btnPause: cc.Node = null
+
+    @property(cc.Node)
+    meterNode: cc.Node = null
+
+    @property(cc.SpriteFrame)
+    btnSpritFrameList:cc.SpriteFrame[] = []
 
 
 
@@ -118,6 +124,7 @@ export default class gameScenePaoKu extends cc.Component {
     showButtonWithPause(visible:boolean){
         this.btnPause.active = visible
         this.timeNode.active = visible
+        this.meterNode.active = visible
         this.node.getChildByName("UIRoot").getChildByName("Jump").active = visible
     }
 
@@ -189,6 +196,11 @@ export default class gameScenePaoKu extends cc.Component {
         //this.startGame()
     }
 
+
+    updateMeter(meter:number){
+        this.meter = meter
+        this.meterNode.getChildByName("num").getComponent(cc.Label).string = this.meter.toString()
+    }
 
     checkIsIpad() {
         let windowSize = cc.view.getVisibleSize();
@@ -280,6 +292,7 @@ export default class gameScenePaoKu extends cc.Component {
     }
 
     startGame(){
+        cc.director.getCollisionManager().enabled = true
         this.startTime()
         this.playBgMusic()
         this.showButtonWithPause(true)
@@ -288,6 +301,7 @@ export default class gameScenePaoKu extends cc.Component {
         this._gamePause = false
         this.bgManager.createBg(5)
         this.createObstacle(10)
+        this.updateMeter(0)
     }
     jump() {
         this.hero.getComponent("hero").jump(300, 500, () => {
@@ -322,6 +336,7 @@ export default class gameScenePaoKu extends cc.Component {
 
 
     gameOver(){
+        cc.director.getCollisionManager().enabled = false
         console.log("gameOver")
         this.pauseGame()
         this._gameOver = true
@@ -329,7 +344,7 @@ export default class gameScenePaoKu extends cc.Component {
         let jieSuanNode = cc.instantiate(this.jieSuanPrefab)
         jieSuanNode.group = "UI"
         let script:jieSuan = jieSuanNode.getComponent("jieSuan")
-        script.show(this.tongJi, this.wordIconList, this.getStarNumber(),"gameScenePaoKu")
+        script.show(this.tongJi, this.wordIconList, this.getStarNumber(),"gameScenePaoKu",this.meter)
         this.node.addChild(jieSuanNode)
     }
 
@@ -414,14 +429,16 @@ export default class gameScenePaoKu extends cc.Component {
         cc.systemEvent.emit(constant.event.RESERME_ACTION)
     }
 
-    onClickPause(){
-        
+    onClickPause(targert){
+        let sprF = targert.target.getComponent(cc.Sprite).spriteFrame 
         this._gamePause = !this._gamePause
         if(this._gamePause){
             //cc.director.pause()
+            targert.target.getComponent(cc.Sprite).spriteFrame  = this.btnSpritFrameList[0]
             this.pauseGame()
         }else{
             //cc.director.resume()
+            targert.target.getComponent(cc.Sprite).spriteFrame  = this.btnSpritFrameList[1]
             this.resumeGame()
         }
     }

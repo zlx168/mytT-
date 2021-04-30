@@ -34,7 +34,7 @@ export default class bgDestroyCheck extends cc.Component {
             if(index < 0){
                 return
             }
-            let posX = this.node.parent.children[length - 1].x + cc.winSize.width 
+            let posX = this.node.parent.children[length - 1].x + cc.winSize.width - 2
             this.node.parent.children.splice(index,1)
             this.node.parent.children.push(this.node)
             this.node.setPosition(cc.v2(posX,this.node.y))

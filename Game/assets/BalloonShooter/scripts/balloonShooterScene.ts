@@ -417,9 +417,9 @@ export default class balloonShooterScene extends cc.Component {
                 return Math.random() - 0.5;
             });
         }
-        for (let i = 0; i < 6; ++i) {
-            randFun(this.posRandList)
-        }
+      
+        randFun(this.posRandList)
+       
         for (let i = 0; i < total; ++i) {
             posList.push(this.posRandList[output[i]])
         }
